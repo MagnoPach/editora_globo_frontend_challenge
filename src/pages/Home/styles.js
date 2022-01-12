@@ -54,7 +54,6 @@ export const Main = styled.main`
                 font-family: Arial, sans-serif;
                 font-size: 19px;
                 font-weight: normal;
-                letter-spacing: 0px;
 
                 margin-top: 20px;
             }
