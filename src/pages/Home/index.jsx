@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Main } from './styles';
+import { Main, Dropdown, Option } from './styles';
+
+import Banner from '../../components/Banner';
 
 import elencoJSON from '../../assets/elenco-palmeiras.json';
 
@@ -92,50 +94,42 @@ const Home = () => {
     return (
         <>
             <Main>
-                <section id="hero">
-                    <div className="hero-box">
-                        <div className="hero-title">
-                            <h1><span>O ELENCO DO</span> <span>CAMPEÃO</span></h1>
-                            <p>CONHEÇA OS JOGADORES DO PALMEIRAS, VENCEDOR DA LIBERTADORES 2021</p>
-                            <p>PUBLICADO EM 03.08.2021 • ATUALIZADO EM 04.08.2021</p>
-                            <p>
-                                Na conquista do tricampeonato da Libertadores pelo Palmeiras, candidatos a herói do título não faltaram.
-                                O carioca Deyverson de 30 anos saiu do banco na prorrogação para marcar o gol da vitória por 2 a 1 sobre o Flamengo e ser eleito o melhor do jogo.
-                                Com defesas importantes, Weverton também pode ser considerado um dos protagonistas do confronto.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <Banner />
                 <section id="menu">
                     <div className="menu-box">
                         <div className="selects">
                             <div className="select-wrapper">
-                                <select onChange={e => handleFilter(e.target.value)}>
-                                    <option>Todos as posições</option>
+                                <Dropdown onChange={e => handleFilter(e.target.value)}>
+                                    <Option>Todos as posições</Option>
                                     {posicoes.map(posicao => {
-                                        return <option>{posicao}</option>;
+                                        return <Option>{posicao}</Option>;
                                     })}
-                                </select>
+                                </Dropdown>
                             </div>
                             <div className="select-wrapper">
-                                <select onChange={e => handleSorting(e.target.value)}>
-                                    <option>Todas as idades</option>
+                                <Dropdown onChange={e => handleSorting(e.target.value)}>
+                                    <Option>Todas as idades</Option>
                                     {idades.map(idade => {
-                                        return <option>{idade} anos</option>;
+                                        return <Option>{idade} anos</Option>;
                                     })}
-                                </select>
+                                </Dropdown>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <input type="checkbox" id="scales" />
-                                <label htmlFor="scales">Scales</label>
+                                <input type="checkbox" id="gol" />
+                                <label htmlFor="gol">Somente quem marcou gol</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="scales" />
-                                <label htmlFor="scales">Scales</label>
+                                <input type="checkbox" id="jogou-final" />
+                                <label htmlFor="jogou-final">Somente quem jogou na final</label>
                             </div>
                         </div>
+                    </div>
+                </section>
+                <section id="grid-section">
+                    <div className='grid-container'>
+
                     </div>
                 </section>
             </Main>

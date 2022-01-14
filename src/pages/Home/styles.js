@@ -1,64 +1,66 @@
 import styled from 'styled-components';
-import bgImage from '../../assets/img-header.jpg'
+import setaBaixoIcon from '../../assets/icones/seta-baixo.svg'
 
 export const Main = styled.main`
-    #hero {
-        witdh: 100%;
-        height: 842px;
-        background: transparent url(${bgImage}) 0% 0% no-repeat padding-box;
+    #menu {
+        width: 100%;
+        height: 80px;
+        border-bottom: 12px solid #006437;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        .hero-box {
-            width: 1260px;
+        .menu-box {
+            width: 878px;
             display: flex;
-            justify-content: start;
-            padding-top: 203px;
-            margin: 0 auto;
-        }
+            justify-content: space-between;
+            align-items: center;
 
-        .hero-title {
-            width: 500px;
+            .selects {
+                width: 621px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-            h1 {
-                color: #FFFFFF;
-                font-size: 60px;
-                font-weight: bold;
-                letter-spacing: 1.5px;
-                
-                span {
-                    background-color: #006437;
-                    padding: 4px 12px;
-                }
-            }
-
-            p:first-of-type {
-                color: #B4DDC1;
-                font-size: 20px;
-                font-weight: normal;
-                letter-spacing: 0.5px;
-
-                margin-top: 20px;
-            }
-
-            p:nth-child(3) {
-                color: #D5D5D5;
-                font-family: Arial, sans-serif;
-                font-size: 12px;
-                font-weight: bold;
-                letter-spacing: 0px;
-
-                margin-top: 15px;
-            }
-
-            p:last-of-type {
-                color: #FFFFFF;
-                font-family: Arial, sans-serif;
-                font-size: 19px;
-                font-weight: normal;
-
-                margin-top: 20px;
             }
         }
     }
 
 
+`
+
+export const Dropdown = styled.select`
+    & {
+        width: 300px;
+        height: 50px;
+        padding: 16px 20px;
+        border-radius: 5px;
+        background: #B4DDC1 url(${setaBaixoIcon}) 92.5% 50% no-repeat;
+        background-size: 15px;
+        color: #006437;
+        font-style: italic;
+
+        -webkit-appearance: none;
+        -moz-appearance:    none;
+        appearance:         none;
+    }
+
+    &:hover {
+        outline: 1px solid #006437;
+    }
+`
+
+export const Option = styled.option`
+    
+    & {
+        background-color: #FFFFFF;
+        line-height: 50px;
+        min-height: 50px;
+        font-size: 15px;
+        color: black;
+    }
+
+    &:hover, &.focus, &.selected.focus {
+        background-color: #E0EFE5;
+    }
 `
