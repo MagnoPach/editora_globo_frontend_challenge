@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Main, Dropdown, Option } from './styles';
 
 import Banner from '../../components/Banner';
+import Checkbox from '../../components/Checkbox';
+import Card from '../../components/Card';
 
 import elencoJSON from '../../assets/elenco-palmeiras.json';
 
@@ -11,6 +13,8 @@ const Home = () => {
     const [idades, setIdades] = useState([]);
     const [sorter, setSorter] = useState('Todas as idades');
     const [filter, setFilter] = useState('Todos as posições');
+    const [checkGols, setGols] = useState(false);
+    const [checkFinal, setFinal] = useState(false);
     // const [editorias, setEditorias] = useState([]);
 
 
@@ -51,6 +55,10 @@ const Home = () => {
 
             if (sorter === 'Todas as idades') {
                 sortedJogadores = filteredJogadores;
+
+                if (checkGols || checkFinal) {
+                    sortedJogadores = verficarCheckBox(sortedJogadores, checkGols, checkFinal);
+                }
             } else {
                 const rangeIdade = sorter.substring(0, 5).trim().split('-');
                 const idade1 = parseInt(rangeIdade[0]);
@@ -59,16 +67,24 @@ const Home = () => {
                 sortedJogadores = filteredJogadores.filter(
                     jogador => jogador.idade >= idade1 && jogador.idade <= idade2
                 );
-            }
 
+                if (checkGols || checkFinal) {
+                    sortedJogadores = verficarCheckBox(sortedJogadores, checkGols, checkFinal);
+                }
+            }
+            console.log(sortedJogadores);
             setJogadores(sortedJogadores);
         } else {
-            const arrJogadores = [elencoJSON];
+            const arrJogadores = [...elencoJSON];
 
             let sortedJogadores;
 
             if (sorter === 'Todas as idades') {
                 sortedJogadores = arrJogadores;
+
+                if (checkGols || checkFinal) {
+                    sortedJogadores = verficarCheckBox(sortedJogadores, checkGols, checkFinal);
+                }
             } else {
                 const rangeIdade = sorter.substring(0, 5).trim().split('-');
                 const idade1 = parseInt(rangeIdade[0]);
@@ -77,11 +93,41 @@ const Home = () => {
                 sortedJogadores = arrJogadores.filter(
                     jogador => jogador.idade >= idade1 && jogador.idade <= idade2
                 );
+
+                if (checkGols || checkFinal) {
+                    sortedJogadores = verficarCheckBox(sortedJogadores, checkGols, checkFinal);
+                }
             }
 
+            console.log(sortedJogadores);
             setJogadores(sortedJogadores);
         }
-    }, [filter, sorter]);
+    }, [filter, sorter, checkGols, checkFinal]);
+
+    const fezGol = (jogadores) => {
+        return jogadores.filter(
+            jogador => jogador.gols > 0
+        );
+    }
+
+    const jogouFinal = (jogadores) => {
+        return jogadores.filter(
+            jogador => jogador.final === 'sim'
+        );
+    }
+
+    const verficarCheckBox = (sortingJogadores, gols, final) => {
+        let jogadores = sortingJogadores;
+
+        if (gols) {
+            jogadores = fezGol(jogadores);
+        }
+
+        if (final) {
+            jogadores = jogouFinal(jogadores)
+        }
+        return jogadores;
+    }
 
     const handleFilter = (value) => {
         setFilter(value);
@@ -115,21 +161,27 @@ const Home = () => {
                                 </Dropdown>
                             </div>
                         </div>
-                        <div>
-                            <div>
-                                <input type="checkbox" id="gol" />
-                                <label htmlFor="gol">Somente quem marcou gol</label>
+                        <div className="checkbox-wrapper">
+                            <div className="check-gols">
+                                <Checkbox label="Somente quem marcou gol"
+                                    value={checkGols}
+                                    checked={checkGols}
+                                    onChange={({ target }) => setGols(target.checked)} />
                             </div>
-                            <div>
-                                <input type="checkbox" id="jogou-final" />
-                                <label htmlFor="jogou-final">Somente quem jogou na final</label>
+                            <div className="check-final">
+                                <Checkbox label="Somente quem jogou na final"
+                                    value={checkFinal}
+                                    checked={checkFinal}
+                                    onChange={({ target }) => setFinal(target.checked)} />
                             </div>
                         </div>
                     </div>
                 </section>
                 <section id="grid-section">
                     <div className='grid-container'>
-
+                        {jogadores.map(jogador => {
+                            return <Card jogador={jogador} />
+                        })}
                     </div>
                 </section>
             </Main>

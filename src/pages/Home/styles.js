@@ -23,6 +23,32 @@ export const Main = styled.main`
                 align-items: center;
 
             }
+
+            .checkbox-wrapper {
+
+                label {
+                    font-size: 15px;
+                    font-style: italic;
+                    letter-spacing: 0.38px;
+                    color: #006437;
+                    margin-left: 11px;
+                }
+            }
+        }
+    }
+
+    #grid-section {
+        width: 100%;
+        min-height: 170px;
+        background-color: #E0EFE5;
+
+        .grid-container {
+            width: 1180px;
+            margin: 0 auto;
+            padding: 50px 0;
+            display: grid;
+            grid-template-columns: repeat(4, 280px);
+            gap: 20px;
         }
     }
 
@@ -48,6 +74,7 @@ export const Dropdown = styled.select`
     &:hover {
         outline: 1px solid #006437;
     }
+
 `
 
 export const Option = styled.option`
@@ -58,6 +85,7 @@ export const Option = styled.option`
         min-height: 50px;
         font-size: 15px;
         color: black;
+        padding: 2px 0;
     }
 
     &:hover, &.focus, &.selected.focus {
