@@ -23,7 +23,7 @@ export const Container = styled.div`
     }
 `
 
-export const JogosBar = styled.div`
+export const StatusBar = styled.div`
     && {
         width: ${props => props.width}%;
         height: 100%;

@@ -1,9 +1,9 @@
-import { Container, SaibaMais } from './styles';
+import { Container } from './styles';
 
-import Chart from '../Chart'
-
+import Chart from '../Chart';
 
 const Card = ({ jogador }) => {
+
     return (
         <Container>
             <div className='jogador-img'>
@@ -24,9 +24,6 @@ const Card = ({ jogador }) => {
                     </div>
                 </div>
             </div>
-            <button className="saiba-mais">
-                <SaibaMais />
-            </button>
         </Container>
     );
 }

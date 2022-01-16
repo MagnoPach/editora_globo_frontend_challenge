@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
-import saibaMaisIcon from '../../assets/icones/saiba-mais.svg'
-import saibaMaisHoverIcon from '../../assets/icones/saiba-mais-hover.svg'
-
 export const Container = styled.div`
     width: 100%;
     height: 100px;
     display: flex;
     align-items: center;
-    position: relative;
         
     background-color: #FFFFFF;
     border: 2px solid #B4DDC1;
@@ -75,23 +71,6 @@ export const Container = styled.div`
             }
         }
     }
-    .saiba-mais {
-        position: absolute;
-        bottom: 6px;
-        right: 6px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-`
 
-export const SaibaMais = styled.div`
-    && {
-        width: 20px;
-        height: 20px;
-        background: url(${saibaMaisIcon});
-
-        &&:hover {
-            background: url(${saibaMaisHoverIcon});
-        }
-    }
+    
 `

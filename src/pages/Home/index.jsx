@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Main, Dropdown, Option } from './styles';
+import { Main, Dropdown, Option, SaibaMais } from './styles';
 
 import Banner from '../../components/Banner';
 import Checkbox from '../../components/Checkbox';
 import Card from '../../components/Card';
+import Modal from '../../components/Modal'
+
 
 import elencoJSON from '../../assets/elenco-palmeiras.json';
 
@@ -15,6 +17,9 @@ const Home = () => {
     const [filter, setFilter] = useState('Todos as posições');
     const [checkGols, setGols] = useState(false);
     const [checkFinal, setFinal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [jogadorIndex, setjogadorIndex] = useState(0);
+
     // const [editorias, setEditorias] = useState([]);
 
 
@@ -46,6 +51,32 @@ const Home = () => {
 
     useEffect(() => {
         setJogadores([]);
+
+        const fezGol = (jogadores) => {
+            return jogadores.filter(
+                jogador => jogador.gols > 0
+            );
+        }
+
+        const jogouFinal = (jogadores) => {
+            return jogadores.filter(
+                jogador => jogador.final === 'sim'
+            );
+        }
+
+        const verficarCheckBox = (sortingJogadores, gols, final) => {
+            let jogadores = sortingJogadores;
+
+            if (gols) {
+                jogadores = fezGol(jogadores);
+            }
+
+            if (final) {
+                jogadores = jogouFinal(jogadores)
+            }
+            return jogadores;
+        }
+
         if (filter !== 'Todos as posições') {
             const filteredJogadores = elencoJSON.filter(
                 jogador => jogador.posicao === filter
@@ -104,31 +135,6 @@ const Home = () => {
         }
     }, [filter, sorter, checkGols, checkFinal]);
 
-    const fezGol = (jogadores) => {
-        return jogadores.filter(
-            jogador => jogador.gols > 0
-        );
-    }
-
-    const jogouFinal = (jogadores) => {
-        return jogadores.filter(
-            jogador => jogador.final === 'sim'
-        );
-    }
-
-    const verficarCheckBox = (sortingJogadores, gols, final) => {
-        let jogadores = sortingJogadores;
-
-        if (gols) {
-            jogadores = fezGol(jogadores);
-        }
-
-        if (final) {
-            jogadores = jogouFinal(jogadores)
-        }
-        return jogadores;
-    }
-
     const handleFilter = (value) => {
         setFilter(value);
     };
@@ -137,9 +143,20 @@ const Home = () => {
         setSorter(value);
     };
 
+    const handleOpenModal = (e, index) => {
+        setShowModal(prev => !prev);
+        handleJogadorIndex(index)
+    };
+
+    const handleJogadorIndex = (index) => {
+        setjogadorIndex(index);
+    };
+
+
     return (
         <>
             <Main>
+                <Modal showModal={showModal} setShowModal={setShowModal} index={jogadorIndex} jogadores={jogadores} />
                 <Banner />
                 <section id="menu">
                     <div className="menu-box">
@@ -179,8 +196,15 @@ const Home = () => {
                 </section>
                 <section id="grid-section">
                     <div className='grid-container'>
-                        {jogadores.map(jogador => {
-                            return <Card jogador={jogador} />
+                        {jogadores.map((jogador, index) => {
+                            return (
+                                <div className="card-container">
+                                    <Card jogador={jogador} />
+                                    <button className="saiba-mais" onClick={e => handleOpenModal(e.target.index, index)}>
+                                        <SaibaMais />
+                                    </button>
+                                </div>
+                            );
                         })}
                     </div>
                 </section>

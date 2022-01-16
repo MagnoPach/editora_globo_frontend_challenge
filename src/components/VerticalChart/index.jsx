@@ -1,6 +1,6 @@
-import { Container, StatusBar } from './styles';
+import { Container, VerticaltatusBar } from './styles';
 
-const Chart = ({ jogos, gols }) => {
+const VerticalChart = ({ jogos, gols }) => {
     const maxJogos = 13;
     const maxGols = 6;
     const jogosPercent = ((100 * jogos) / maxJogos).toFixed(0);
@@ -9,15 +9,15 @@ const Chart = ({ jogos, gols }) => {
     return (
         <Container>
             <div className="jogos-container">
-                <StatusBar width={jogosPercent} color={'#B4DDC1'} />
                 <p>{jogos}</p>
+                <VerticaltatusBar width={jogosPercent} color={'#B4DDC1'} />
             </div>
             <div className="gols-container">
-                <StatusBar width={golsPercent} color={'#72BF44'} />
                 <p>{gols}</p>
+                <VerticaltatusBar width={golsPercent} color={'#72BF44'} />
             </div>
         </Container>
     );
 }
 
-export default Chart;
+export default VerticalChart;

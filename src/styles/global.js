@@ -23,6 +23,20 @@ export default createGlobalStyle`
     border: 0;
     outline: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #FFFFFF;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #006437;
+    border-radius: 20px;
   }
 
   body {
