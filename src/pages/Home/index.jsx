@@ -143,7 +143,7 @@ const Home = () => {
         setSorter(value);
     };
 
-    const handleOpenModal = (e, index) => {
+    const handleOpenModal = (index) => {
         setShowModal(prev => !prev);
         handleJogadorIndex(index)
     };
@@ -200,7 +200,7 @@ const Home = () => {
                             return (
                                 <div className="card-container">
                                     <Card jogador={jogador} />
-                                    <button className="saiba-mais" onClick={e => handleOpenModal(e.target.index, index)}>
+                                    <button className="saiba-mais" onClick={e => handleOpenModal(index)}>
                                         <SaibaMais />
                                     </button>
                                 </div>
