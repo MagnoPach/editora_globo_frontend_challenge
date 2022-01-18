@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a38df661-4ef8-4b0a-91f4-b759885804da/deploy-status)](https://app.netlify.com/sites/minuto-news/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+<br />
+<br />
 
-## Available Scripts
+<p align="center">
+  <a href="https://elated-ride-ed19bf.netlify.app/">
+    <img src="src/assets/logo.png" alt="Logo" width="360">
+  </a>
 
-In the project directory, you can run:
+  <h3 align="center">Elenco Campeão</h3>
 
-### `npm start`
+  <p align="center">
+    <br />
+    <a href="https://elated-ride-ed19bf.netlify.app/">Ver demonstração</a>
+  </p>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
+<br />
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<details open="open">
+  <summary>Índice de conteúdo</summary>
+  <ol>
+    <li>
+      <a href="#sobre">Sobre</a>
+      <ul>
+        <li><a href="#construído-com">Construído com</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#executando">Executando</a></li>
+      <ul>
+        <li><a href="#pré-requisitos">Pré-requisitos</a></li>
+        <li><a href="#instalacão">Instalação</a></li>
+      </ul>
+    </li>
+    <li><a href="#contato">Contato</a></li>
+  </ol>
+</details>
 
-### `npm test`
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Sobre
 
-### `npm run build`
+[![Captura de tela do Elenco Campeão][tela-elenco-campeao]](http://minutonews.hudsonlessa.com)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Esse projeto foi proposto como teste em um processo seletivo para Desenvolvedor Front-End.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Os objetivos do projeto giravam em torno do desenvolvimento do front-end da pagina descritiva sobre o elenco do Clube Palmeira, vencedor da Libertadores de 2021. O projeto foi desenvolvido seguindo fielmente o *design* disponibilizado, sendo vedado, o uso de *frameworks* CSS. Os objetivos incluíam, também, o emprego de tecnologias JavaScript e de pré-processadores de CSS para o desenvolvimento.
 
-### `npm run eject`
+### Construído com
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [React](http://reactjs.org)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Funcionalidades
+1. Modal com navegação e dados detalhados dos jogadores
+2. Exibição de jogadores em grid
+    * Filtragem por posição do jogador
+    * Filtragem por idade do jogador
+    * Filtragem por gol feito
+    * Filtragem de jogadores que jogaram na final
+3. Gráfico de estatisticas do jogador (quantidade de gols e jogos realizados)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Executando
 
-## Learn More
+### Pré-requisitos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Antes de começar, você precisará ter instalado em sua máquina as seguintes ferramentas:
+1. [Node e NPM](http://nodejs.org)
+### Instalação
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Baixe este repositório
+2. Acesse a pasta raiz do repositório baixado através do CLI (*Command Line Interface*, Interface de Linha de Comando: cmd, PowerShell, bash, etc)
+3. Execute o seguinte comando e aguarde a instalação das dependências do projeto:
 
-### Code Splitting
+  ```sh
+    npm install
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Execute o seguinte comando para iniciar o projeto:
 
-### Analyzing the Bundle Size
+  ```sh
+    npm run start
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. Aguarde a abertura automática do seu navegador padrão já na página do projeto. Caso isso não ocorra, acesse o projeto através do seu navegador preferido no seguinte endereço:
 
-### Making a Progressive Web App
+  ```http
+  localhost:3000
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br />
 
-### Advanced Configuration
+## Contato
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Magno Cruz - [LinkedIn](https://www.linkedin.com/in/magno-cruz/)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[tela-elenco-campeao]: public/tela-elenco-campeao.png
