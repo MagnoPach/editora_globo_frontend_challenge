@@ -1,6 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a38df661-4ef8-4b0a-91f4-b759885804da/deploy-status)](https://app.netlify.com/sites/minuto-news/deploys)
-
-<br />
 <br />
 <br />
 
@@ -46,7 +43,7 @@
 
 ## Sobre
 
-[![Captura de tela do Elenco Campeão][tela-elenco-campeao]](http://minutonews.hudsonlessa.com)
+[![Captura de tela do Elenco Campeão][tela-elenco-campeao]](https://elated-ride-ed19bf.netlify.app/)
 
 <br />
 
