@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://elated-ride-ed19bf.netlify.app/">
-    <img src="src/assets/logo.png" alt="Logo" width="360">
+    <img src="./src/assets/logo.png" alt="Logo" width="360">
   </a>
 
   <h3 align="center">Elenco Campeão</h3>
@@ -103,4 +103,4 @@ Magno Cruz - [LinkedIn](https://www.linkedin.com/in/magno-cruz/)
 
 
 
-[tela-elenco-campeao]: public/tela-elenco-campeao.png
+[tela-elenco-campeao]: ./public/tela-elenco-campeao.png
