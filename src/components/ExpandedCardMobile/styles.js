@@ -1,76 +1,73 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 356px;
-    height: 364px;
+    width: 280px;
+    height: 350px;
+    
     background-color: #FFFFFF;
     border: 2px solid #B4DDC1;
-    border-radius: 80px 15px 15px 15px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-
-    padding-top: 26px;
-
-    .container-status{
-        width: 110px;
+    border-radius: 50px 15px 15px 15px;
+    
+    .container-status {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
 
         .jogador-img {
             display: flex;
-            flex-direction: column;
             align-items: center;
-    
+            margin-left: 10px;
+
             img {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
                 background-color: #006437;
                 border-radius: 50%;
             }
         }
-    
-        .jogador-info { 
-            width: 100%;
-    
-            .jogador-container {
-                margin-top: 5px;
 
-                p {
-                    font-size: 13px;
-                    letter-spacing: 0.61px;
-                    text-align: center;
+        .jogador-info {  
+            margin-left: 6.5px;
+
+            .jogador-container {
+
+                width: 164px;
+                
+                p:first-of-type {
+                    font-size: 15px;
+                    font-weight: bold;
+                    color: #006437;
+                
+                }
+            
+                p:last-of-type {
+                    font-size: 12px;
                     color: #161615;
                 }
-
-                p:first-of-type {
-                    font-weight: bold;
-                }
             }
-    
+
             .jogador-status {
-                width: 100%;
+                width: 158px;
                 display: flex;
-                flex-direction: column-reverse;
                 align-items: center;
-    
+
                 margin-top: 10px;
-    
-    
+
+
                 .status-legend {
-                    display: flex;
-                    align-items: center;
-                    margin-top: 6px;
+
                     p {
                         font-size: 12px;
                         color: #161615;
                     }
                     
                     p:last-of-type {
-                        margin-left: 16px;
+                        margin-top: 6.5px;
                     }
                 }
-    
+
                 .status-data {
-                    width: 100%;
                     font-size: 14px;
                     font-weight: bold;
                     color: #161615;
@@ -81,28 +78,21 @@ export const Container = styled.div`
     }
 
     .container-texto {
-
-        .text-titulo {
-            width: 178px;
-            font-size: 19px;
-            font-weight: bold;
-            color: #006437;
-            white-space: nowrap;
-        }
+        width: 230px;
+        height: 128px;
+        margin: 0 auto;
 
         .texto-box {
-            width: 178px;
-            height: 216px;
+            width: 100%;
+            height: 100%;
             overflow: auto;
-            padding-right: 4px;
             font-size: 13px;
             line-height: 18px;
-            letter-spacing: 0.61px;
             margin-top: 22px;
         }
 
     }
+    
 
     
 `
-

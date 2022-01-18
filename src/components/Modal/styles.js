@@ -39,6 +39,13 @@ export const Container = styled.div`
                 cursor: pointer;
             }
         }
+
+        @media screen and (max-width: 601px) {
+            .steps-buttons {
+                bottom: 21px;
+                left: 30px;
+            }
+        }
     }
     
 `
@@ -78,6 +85,7 @@ export const StepButton = styled.div`
             position: absolute;
             top: 8px;
             left: 8px;
+
         }
 
         .arrow-after {

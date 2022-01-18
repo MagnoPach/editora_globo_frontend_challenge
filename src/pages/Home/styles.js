@@ -19,6 +19,14 @@ export const Main = styled.main`
             justify-content: space-between;
             align-items: center;
 
+            p:first-of-type {
+                display: none;
+            }
+
+            p:last-of-type {
+                display: none;
+            }
+
             .selects {
                 width: 621px;
                 display: flex;
@@ -37,6 +45,112 @@ export const Main = styled.main`
                     margin-left: 11px;
                 }
             }
+        }
+
+        @media screen and (max-width: 900px) {
+
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+
+            .menu-box {
+                width: 621px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+
+                .checkbox-wrapper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 8px;
+                    padding-left: 15px;
+                }
+            }
+
+            
+            
+        }
+
+        @media screen and (max-width: 640px) {
+
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+
+            .menu-box {
+                width: 280px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+
+                p:first-of-type { 
+                    display: block;
+                    color: #72BF44;
+                    font-family: Arial, sans-serif;
+                    font-size: 9px;
+                    font-weight: bold;
+                    letter-spacing: 0px;
+
+                    margin-top: 3px;
+                }
+    
+                p:last-of-type {
+                    display: block;
+                    color: #006437;
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    font-weight: normal;
+                    line-height: 23px;
+
+                    margin-top: 19px;
+                }
+
+                .selects {
+                    width: 100%;
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 30px;
+
+                    .select-wrapper {
+                        width: 100%;
+
+                        select {
+                            width: 100%;
+                            height: 50px;
+                        }
+                        
+                    }
+    
+                }
+
+                .checkbox-wrapper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    padding-left: 15px;
+
+                    label {
+                        width: 101px;
+                        font-size: 14px;
+                        font-style: italic;
+                        letter-spacing: 0.38px;
+                        color: #006437;
+                        margin-left: 11px;
+                    }
+                }
+            }
+
+            
+            
         }
     }
 
@@ -63,6 +177,28 @@ export const Main = styled.main`
                 right: 6px;
                 border-radius: 50%;
                 cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .grid-container {
+                width: 580px;
+                margin: 0 auto;
+                padding: 17px 0;
+                display: grid;
+                grid-template-columns: repeat(2, 280px);
+                gap: 20px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .grid-container {
+                width: 280px;
+                margin: 0 auto;
+                padding: 17px 0;
+                display: grid;
+                grid-template-columns: repeat(1, 280px);
+                gap: 20px;
             }
         }
     }

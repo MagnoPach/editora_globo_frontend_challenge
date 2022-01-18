@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Container, CloseModalButton, StepButton } from './styles';
 
-import ExpandedCard from '../ExpandedCard'
+import ExpandedCard from '../ExpandedCard';
+import ExpandedCardMobile from '../ExpandedCardMobile';
 
-import rightArrow from '../../assets/icones/seta-direita.svg'
-import lefttArrow from '../../assets/icones/seta-esquerda.svg'
+import useWindowSize from '../../Hooks/useWindowSize';
+
+import rightArrow from '../../assets/icones/seta-direita.svg';
+import lefttArrow from '../../assets/icones/seta-esquerda.svg';
 
 const Modal = ({ showModal, setShowModal, index, jogadores }) => {
 
@@ -28,12 +31,19 @@ const Modal = ({ showModal, setShowModal, index, jogadores }) => {
         }
     };
 
+    const windowSize = useWindowSize();
+    console.log(windowSize.width);
+
     return (
         <>
             {showModal ? (
                 <Container>
                     <div className="expCard-container">
-                        <ExpandedCard jogador={jogadores[activeIndex]} />
+                        {windowSize.width > 600 ? (
+                            <ExpandedCard jogador={jogadores[activeIndex]} />
+                        ) : (
+                            <ExpandedCardMobile jogador={jogadores[activeIndex]} />
+                        )}
                         <button className="close-buttom" onClick={() => setShowModal(prev => !prev, setActiveIndex(0))}>
                             <CloseModalButton />
                         </button>
